@@ -27,14 +27,12 @@ type tSongFull = {
   header_image_url: string;
 } & tSong;
 
-const fetchSongInfo = async (id?: string) => {
+const fetchSongInfo = async (id?: string): Promise<tSongFull> => {
   const res = await fetch(
-    // `https://genius.com/api/songs/${id}`
-    `http://localhost:8010/proxy/api/songs/${id}`
+    `https://lyrics-song-api.herokuapp.com/song?id=${id}`
   );
 
-  const data = (await res.json()) as { response: { song: tSongFull } };
-  return data.response.song;
+  return await res.json();
 };
 
 interface IBlogTags {
