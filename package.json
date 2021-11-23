@@ -31,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "npx local-cors-proxy --proxyUrl https://genius.com"
+    "proxy": "npx local-cors-proxy --proxyUrl https://genius.com",
+    "deploy": "heroku static:deploy"
   },
   "eslintConfig": {
     "extends": [
